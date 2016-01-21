@@ -1,5 +1,5 @@
 require "minitest/autorun"
-# ruby -Ilib:test numeric_positive_negative.rb
+# ruby -Ilib:test fetch_values.rb
 
 class Hash
 

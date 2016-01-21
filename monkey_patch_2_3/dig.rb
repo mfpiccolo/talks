@@ -4,17 +4,10 @@ require "minitest/autorun"
 class Hash
 
   def monkey_dig(*keys)
-    first_key = keys.shift
-    nested_hash = self[first_key]
-    if nested_hash && keys.any?
-      nested_hash.monkey_dig(keys)
-    else
-      nested_hash
+    keys.inject(self) do |last_return, key|
+      return if last_return.empty?
+      last_return[key]
     end
-    # keys.inject(self) do |last_return, key|
-    #   return if last_return.empty?
-    #   last_return[key]
-    # end
   end
 
 end
